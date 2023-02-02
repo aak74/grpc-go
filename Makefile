@@ -13,8 +13,11 @@ help: ## Show this help
 build: ## Build app
 	go build cmd/server/main.go
 
-run: ## Run app
+run-server: ## Run server app
 	go run cmd/server/main.go
+
+run-client: ## Run client app
+	go run cmd/client/main.go 7 8
 
 pb: ## Generate protobuf files
 	protoc --proto_path="$(PROTO_SRC_DIR)" --go-grpc_out=. "$(PROTO_SRC_DIR)"/adder.proto
